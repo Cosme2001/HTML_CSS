@@ -1,0 +1,42 @@
+body{
+    background-color: black;
+}
+
+/*==========================================
+TEXT STYLE
+===========================================*/
+h3{
+    color: aliceblue;
+    text-align: center;
+    text-shadow: 1px .5px 4px rgba(0, 0, 0, 0.6);
+}
+
+p{
+    color: aliceblue;
+    text-align: center;
+    text-shadow: 1px .5px 4px rgba(0, 0, 0, 0.6);
+}
+
+h5{
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h6 {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h2{
+    color: aliceblue;
+}
+
+.wrap{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
