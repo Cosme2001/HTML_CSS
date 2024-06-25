@@ -40,3 +40,22 @@ h2{
     left: 0;
     text-align: center;
 }
+
+
+/*=====================================================
+FORM STYLES
+======================================================*/
+
+#schedule_form{
+    background-color: white;
+}
+
+.schedule{
+    width: 60%;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 1px auto;
+    background-color: lightblue;
+    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .5);
+}
+
