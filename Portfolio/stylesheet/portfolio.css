@@ -1,7 +1,23 @@
 /****GENERAL STYLING*****/
+
+/*Affects entire document*/
+html {
+    scroll-behavior: smooth;
+}
 /*BODY*/
 body{
     margin: 0%;
+    opacity: 1;
+    transition: 3s opacity;
+    letter-spacing: .2vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5vw;
+    overflow-x: hidden;
+    user-select: none;
+}
+
+body.fade-out {
+    opacity: 1;
 }
 
 /*HEADING 1 ELEMENTS*/
@@ -23,16 +39,17 @@ h1:hover{
 /*STYLING FOR PORTFOLIO TITLE TEXT*/
 .white text{
     color: #fff;
+    padding-top: 10vh;
 }
 
 /*PARAGRAPH ELEMENTS*/
 p{
     font-family: 'Times New Roman', Times, serif;
     text-align: justify;
-    letter-spacing: 1px;
-    font-size: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
 }
 
 /*PARAGRAPH ELEMENT HOVER EFFECT*/
@@ -47,37 +64,36 @@ p:hover{
 }
 
 /*CENTER CLASS HOVER EFFECT- AFFECTS QUOTE GITHUB LINK AND FOOTER*/
-.center:hover{
+.center:hover {
     transition: transform 2s;
     transform: scale(1.1);
 }
 
 /*ANCHOR ELEMENTS*/
-a{
+a {
     color: blue;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 /*QUOTATION ELEMENTS*/
-q{
+q {
     font-style: italic;
 }
 
 /*IMAGE ELEMENTS*/
-img{
+img {
     filter: grayscale(75%); /*RIDS PICTURE OF 75% OF THEIR COLOR*/
     border-radius: 8px; /*GIVES ALL IMAGES SLIGHT ROUNDED CORNERS*/
     max-width: 100%; /*ENSURES ALL IMAGES STAY WITHIN THEIR CONTAINER*/
     height: 340px; /*SETS HEIGHT OF ALL IMAGES*/
     display: block; /*BY SPECIFYING BLOCK DISPLAY IT ENSURES IMAGES ARE ABLE TO BE CENTERED*/
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto auto auto auto;
 }
 
 /*IMAGE ELEMENT HOVER EFFECTS*/
-img:hover{
+img:hover {
     filter: grayscale(5%); /*BRINGS BACK MOST OF IMAGE'S COLOR WHEN HOVERED OVER*/
-    transition: transform 1s;
-    transform: scale(1.1);
 }
 
 /*THE @MEDIA RULE IS USED IN MEDIA QUERIES TO APPLY DIFFERENT STYLES FOR DIFFERENT MEDIA/TYPES OF DEVICES*/
@@ -108,15 +124,20 @@ footer{
     animation: moveNav 5s;
 }
 
+@keyframes moveNav {
+    from {left: -100vw;}
+    to { left: 0vw;}
+}
+
 /*NAVBAR LINKS*/
 .navbar a{
     float: left;
     display: block;
     color: whitesmoke;
-    padding: 14px 16px;
+    padding: .75vw 1vw;
     text-decoration: none; /*GETS RID OF THE UNDERLINE*/
     font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
+    font-size: 1.5vw;
     text-align: center;
     position: relative; /*SETS TEXT RELATIVE TO ITS NORMAL POSITIONING ALLOWING TO USE ANIMAITON BELOW*/
     -webkit-animation: moveNavText 5.75s; /*Animaiton for Safari 4.9-8.0*/
@@ -132,7 +153,7 @@ footer{
 /*SCREENS 576PX AND SMALLER WILL DISPLAY NAVBAR LINKS EQUALLY DISTIRBUTED*/
 @media screen and (max-width: 576px) {
     .navbar a{
-        width: 25%; /*MAKES EACH LINK TAKE UP 1/4TH OF NAVBAR*/
+        width: 20%; /*MAKES EACH LINK TAKE UP 1/4TH OF NAVBAR*/
         font-size: 12px;
     }
 }
@@ -142,6 +163,7 @@ footer{
     background-color: darkslategray;
     color: black;
     font-weight: bold;
+    cursor: pointer;
 }
 
 /*NAVBAR HOME BUTTON*/
@@ -172,7 +194,8 @@ footer{
     background: rgba(0, 0, 0, 0.5); /*PROVIDES SEMI-TRANSPARENT BACKGROUND FOR TEXT TO SIT OVER*/
     color: white;
     width: 100%; /*ENSURES VIDEO-TEXT CONTAINER FILLS THE WIDTH OF THE VIDEO*/
-    padding: 20px;
+    height: 100vh;
+    padding-top: 2vh;
     position: relative;
     -webkit-animation: moveVideoText 5.75s;
     animation: moveVideoText 5.75s;
@@ -185,6 +208,101 @@ footer{
 }
 /*END OF VIDEO STYLING*/
 
+/*Slideshow section*/
+#slideshow-background {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.mySlides{
+    display: none;
+}
+
+#slideshow_container {
+    width: 39.5vw;
+    height: auto;
+    padding-top: 4%;
+    position: relative;
+    margin: auto;
+}
+
+.slideshow_images {
+    vertical-align: middle;
+    height: auto;
+    box-shadow: 0px 5px 10px 12px rgba(0, 0, 0, .75);
+    width: 100%
+}
+
+/*Previous and Next button*/
+.previous, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 2vw;
+    color: darkgray;
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transition: 0.6 ease;
+}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.previous:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+.text {
+    color: white;
+    padding: 1vw;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: Perpetua, Rockwell Extra Bold;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    background-color: rgba(0, 0, 0, 0.75);
+    font-weight: bold;
+    border-radius: 0px 0px 7px 7px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 1vw;
+    width: 1vw;
+    margin: .25vw;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    z-index: 1;
+}
+
+.active, .dot:hover {
+    background-color: black;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+    -webkit-animation-name: fade;
+    -moz-animation-duration: 1.5S;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+
+@keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
 /*TABLE STYING COVERS STYLING OF THE COLUMNS AND ROWS WITHIN THE TABLE*/
 * { /*ASTERISK IS A UNIVERSAL SELECTOR THAT APPLIES THIS EFFECT TO ALL ELEMENTS*/
 box-sizing: border-box;
@@ -232,53 +350,91 @@ MORE ROOM FOR CONTACT FORM WHILE KEEPING THE REST OF THE FORMATTING FROM COLUMN_
 /*END OF TABLE STYLING*/
 
 /*CONTACT FORM STYLING*/
-/* INPUT[TYPE=TEXT] TARGETS ALL TEXT INPUT SECTIONS OF THE CONTACT FORM*/
-input[type=text] {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-/*HOVER EFFECTS FOR INPUT BOXES*/
-input[type=text]:hover{
-    box-shadow: 0 0 5px #0004d inset;
-}
-
-/*SUBMIT BUTTON*/
-input[type=submit]{
-    background-color: black;
-    color: whitesmoke;
-    font-weight: bold;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-/*HOVER EFFEC FOR SUBMIT BUTTON*/
-input[type=submit]:hover{
-    background-color: whitesmoke;
+.pop_up_button {
+    position: fixed;
+    bottom: 1.75vw;
+    right: 1.75vw;
+    width: 25vw;
+    background-color: white;
     color: black;
-    transform: scale(1.5);
-    transition: transform 1.5s;
+    border: solid black;
+    cursor: pointer;
+    -webkit-animation: movePopup 5s;
+    animation: movePopup 5s;
 }
 
-/*FORM ELEMENT*/
-form{
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 10px;
-    font-family: 'Times New Roman', Times, serif;
+@keyframes movePopup {
+    from {right: -40vw;}
+    to {right: 1.75vw;}
 }
-/*END OF CONTACT FORM STYLING*/
-    
+
+@-webkit-keyframes movePopup {
+    from {right: -40vw;}
+    to {right: 1.75vw;}
+}
+
+.form-popup {
+    border: 3px solid #f0f1f0;
+    z-index: 8;
+    display: none;
+    position: fixed;
+    bottom: .5vw;
+    right: .5vw;
+}
+
+.form-container {
+    max-width: 49vw;
+    padding: 1vw;
+    background-color: white;
+}
+
+.form-container input[type=text] {
+    width: 100%;
+    padding: .93vw;
+    margin: .6vw 0 .6vw 0;
+    border: none;
+    background: gainsboro;
+    font-size: 1vw;
+}
+
+button {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: .3vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    padding: 1.5vw;
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+}
+
+button:hover, .form-container .btn:hover {
+    color: white;
+    background-color: black;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    border-color: silver;
+}
+
+/*Submit button*/
+.form-container .btn {
+    background-color: white;
+    color: black;
+    border-color: black;
+    margin-bottom: 1vh;
+}
+
+/*Close button*/
+.form-container .cancel{
+    background-color: black;
+    color: white;
+    border-color: gray;
+}
+
+.form-container .cancel {
+    color: white;
+    background-color: darkred;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    border-color: black;
+}
