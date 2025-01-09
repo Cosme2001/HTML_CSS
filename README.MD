@@ -1,14 +1,14 @@
 # HTML and CSS Projects
 
-#These are all my projects I have made that I made in HTML and CSS. 
+This repository contains two front end web development projects that demonstrate my skills on creating front end projects. 
+The two projects are a Space Station site and a Movie Theatre site.
 
-    -Space Station Site
-    -Movie Theater Site
+The Space Station:
 
-    #Space Station Site
+This is a conceptual site for anyone that would want to book a travel through space. 
+It contains multiple features including a navagation bar for easy navigation through the site, image containers showing different locations, and a form for a person who would you want to book an appointment.
+I used HTML and CSS to create this site. 
 
-    This was a site used for if space travel was possible that someone could book an appointment going into space. It was created with HTML and CSS. It contains a navbar, image containers, and a form.
+Academy Cinemas:
 
-    Movie Theater Site
-
-    This is an example home page for a movie theater. It is styled using Bootstrap 4. It has many Bootstrap components in it including a navbar, jumbotron, form, cards, and dropdowns.
+This is also a conceptual site for someone who would be interested in going to a movie theatre to look at what is showing and knowing what time the movie would be playing. It contains features like a navigation bar and drop down menu for easier access to different parts of the site and cards that display movies and the details about them. I used HTML, CSS, and utilzied Bootstrap to make this website.
